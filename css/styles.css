@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* div del header */
+.encabezado {
+  height: 100px;
+  box-shadow: 5px 2px 10px #222;
+  /* background-color: #b33333; */
+  width: 98vw;
+  margin: auto;
+  margin-bottom: 2em;
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.encabezado__titulo-title {
+  font-size: 4.5em;
+  padding-left: 30px;
+  font-weight: 700;
+  text-shadow: 6px 8px 8px #DF4759;
+  color: #222;
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* .back {
+  background: rgb(90, 210, 231);
+} */
+
+.filtros {
+  width: fit-content;
+}
+
+.containerItem {
+  display: flex;
+  width: 100%;
+  border-radius: 1.5rem;
+}
+
+.containerImage {
+  width: auto;
+  border-radius: 1.5rem;
+}
+
+.image{
+  width: 250px;
+  height: 200px;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.containerInfo {
+  width: 100%;
+  line-height: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 1.5rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+.ordenar {
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+.opciones{
+  width: max-content;
+  background-color: #f8f9fa;
+  border-radius: 1.5rem;
+}
+
+.opciones-titulo {
+  color: #222;
+}
+
+.opciones-titulo:hover{
+  text-decoration: none;
+  transform: scale(1.1);
+}

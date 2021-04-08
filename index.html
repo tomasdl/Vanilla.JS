@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">    
+    <title>Alquileres | Alquileres de departamentos</title>
+</head>
+<body class="back">
+    <header class="sticky-top text-center encabezado">
+        <h1 class="encabezado__titulo-title">Alquileres</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2 col sidenav border border-right-dark opciones">
+                <button id="verTodos" class="btn border btn-sm mb-3">Ver todos</button>
+                <a class="btn-light dropdown-toggle" data-toggle="collapse" href="#collapser1" role="button" aria-expanded="false" aria-controls="collapser1">Seleccionar Ubicacion</a>
+                <ul class="collapse nav-stacked mt-3" id="collapser1">
+                    <li><label for="belgrano" class="d-block filtros"><input type="checkbox" id="belgrano" class="mr-2 eachOption ubicacion">Belgrano</label></li>
+                    <li><label for="caballito" class="d-block filtros"><input type="checkbox" id="caballito" class="mr-2 eachOption ubicacion">Caballito</label></li>
+                    <li><label for="colegiales" class="d-block filtros"><input type="checkbox" id="colegiales" class="mr-2 eachOption ubicacion">Colegiales</label></li>
+                    <li><label for="flores" class="d-block filtros"><input type="checkbox" id="flores" class="mr-2 eachOption ubicacion">Flores</label></li>
+                    <li><label for="monserrat" class="d-block filtros"><input type="checkbox" id="monserrat" class="mr-2 eachOption ubicacion">Monserrat</label></li>
+                    <li><label for="palermo" class="d-block filtros"><input type="checkbox" id="palermo" class="mr-2 eachOption ubicacion">Palermo</label></li>
+                </ul>
+                <button id="btnAplicar1" class="btn border btn-sm mt-2 mb-3 d-block">Aplicar</button>
+                <a class="btn-light dropdown-toggle opciones-titulo" data-toggle="collapse" href="#collapser2" role="button" aria-expanded="false" aria-controls="collapser2">Cant. de Ambientes</a>
+                <ul class="collapse nav-stacked mt-3" id="collapser2">
+                    <li><label for="1" class="d-block filtros"><input type="checkbox" id="1" class="mr-2 eachOption ambiente" name="ambiente">1 ambiente</label></li>
+                    <li><label for="2" class="d-block filtros"><input type="checkbox" id="2" class="mr-2 eachOption ambiente" name="ambiente">2 ambientes</label></li>
+                    <li><label for="3" class="d-block filtros"><input type="checkbox" id="3" class="mr-2 eachOption ambiente" name="ambiente">3 ambientes</label></li>
+                    <li><label for="4" class="d-block filtros"><input type="checkbox" id="4" class="mr-2 eachOption ambiente" name="ambiente">4 ambientes</label></li>
+                </ul>
+                <button id="btnAplicar2" class="btn border btn-sm mt-2 mb-3 d-block">Aplicar</button>
+                <a class="btn-light dropdown-toggle opciones-titulo" data-toggle="collapse" href="#collapser3" role="button" aria-expanded="false" aria-controls="collapser3">Seleccionar Superficie</a>
+                <ul class="collapse nav-stacked mt-3" id="collapser3">
+                    <li><label for="supe1" class="d-block filtros"><input type="radio" id="supe1" class="mr-2 eachOption superficie" name="superficie">menor a 40m<sup>2</sup></label></li>
+                    <li><label for="supe2" class="d-block filtros"><input type="radio" id="supe2" class="mr-2 eachOption superficie" name="superficie">entre 40m<sup>2</sup> y 60m<sup>2</sup></label></li>
+                    <li><label for="supe3" class="d-block filtros"><input type="radio" id="supe3" class="mr-2 eachOption superficie" name="superficie">mayor a 60m<sup>2</sup></label></li>
+                    <li><label for="vacio1"class="d-block filtros"><input type="radio" id="vacio1"class="mr-2 eachOption vacio"      name="superficie">ninguno</label></li>
+                </ul>
+                <button id="btnAplicar3" class="btn border btn-sm mt-2 mb-3 d-block">Aplicar</button>
+                <a class="btn-light dropdown-toggle opciones-titulo" data-toggle="collapse" href="#collapser4" role="button" aria-expanded="false" aria-controls="collapser4">Antigüedad</a>
+                <ul class="collapse nav-stacked mt-3" id="collapser4">
+                    <li><label for="anti1" class="d-block filtros"><input type="radio" id="anti1" class="mr-2 eachOption antiguedad" name="antiguedad">A estrenar</label> </li>
+                    <li><label for="anti2" class="d-block filtros"><input type="radio" id="anti2" class="mr-2 eachOption antiguedad" name="antiguedad">Hasta 15 años</label> </li>
+                    <li><label for="anti3" class="d-block filtros"><input type="radio" id="anti3" class="mr-2 eachOption antiguedad" name="antiguedad">entre 15 y 40 años</label> </li>
+                    <li><label for="anti4" class="d-block filtros"><input type="radio" id="anti4" class="mr-2 eachOption antiguedad" name="antiguedad">entre 40 y 60 años</label> </li>
+                    <li><label for="anti5" class="d-block filtros"><input type="radio" id="anti5" class="mr-2 eachOption antiguedad" name="antiguedad">mayor a 60 años</label></li>
+                    <li><label for="vacio2"class="d-block filtros"><input type="radio" id="vacio2"class="mr-2 eachOption vacio"      name="antiguedad">ninguno</label></li>
+                </ul>
+                <button id="btnAplicar4" class="btn border btn-sm mt-2 mb-3 d-block">Aplicar</button>
+                <a class="btn-light dropdown-toggle opciones-titulo" data-toggle="collapse" href="#collapser5" role="button" aria-expanded="false" aria-controls="collapser5">Selecionar Precio</a>
+                <ul class="collapse nav-stacked mt-3" id="collapser5">
+                    <li><label for="prec1" class="d-block filtros"><input type="radio" id="prec1" class="mr-2 eachOption precio" name="precio">Hasta $20000</label> </li>
+                    <li><label for="prec2" class="d-block filtros"><input type="radio" id="prec2" class="mr-2 eachOption precio" name="precio">$20000 a $30000</label> </li>
+                    <li><label for="prec3" class="d-block filtros"><input type="radio" id="prec3" class="mr-2 eachOption precio" name="precio">$30000 a $40000</label> </li>
+                    <li><label for="prec4" class="d-block filtros"><input type="radio" id="prec4" class="mr-2 eachOption precio" name="precio">mayor a $40000</label></li>
+                    <li><label for="vacio3"class="d-block filtros"><input type="radio" id="vacio3"class="mr-2 eachOption vacio"  name="precio">ninguno</label></li>
+                </ul>
+                <button id="btnAplicar5" class="btn border btn-sm mt-2 mb-3 d-block">Aplicar</button>
+                <a class="btn-light dropdown-toggle opciones-titulo" data-toggle="collapse" href="#collapser6" role="button" aria-expanded="false" aria-controls="collapser6">Tipo de Anunciante</a>
+                <ul class="collapse nav-stacked mt-3" id="collapser6">
+                    <li><label for="directo" class="d-block filtros"><input type="checkbox" id="directo" class="mr-2 eachOption anunciante">directo</label> </li>
+                    <li><label for="inmobiliaria" class="d-block filtros"><input type="checkbox" id="inmobiliaria" class="mr-2 eachOption anunciante">inmobiliaria</label></li>
+                </ul>
+                <button id="btnAplicar6" class="btn border btn-sm mt-2 mb-3">Aplicar</button>
+                <button id="btnAplicarTodos" class="btn border btn-sm mb-3">Aplicar todos</button>
+            </div>
+            <div class="col-sm-8 col">
+                <main>
+                    <div id="mainContent">
+                        
+                    </div>
+                    <div id="notificacion">
+                        
+                    </div>
+                </main>
+            </div>
+            <div class="col-sm-2 text-right bg-light border border-left-dark opciones">
+                <h3 class="text-center">Ordenar</h3>
+                <ul>
+                    <li class="text-center"><button id="porUbic" class="btn btn-outline-dark btn-sm ordenar">Por ubicacion</button></li>
+                    <li class="text-center"><button id="porPrec" class="btn btn-outline-dark btn-sm ordenar">Por precio</button></li>
+                    <li class="text-center"><button id="porAmbi" class="btn btn-outline-dark btn-sm ordenar">Por ambientes</button></li>
+                    <li class="text-center"><button id="porSupe" class="btn btn-outline-dark btn-sm ordenar">Por superficie</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-info text-center">
+        <div class="container p-4 pb-0">
+            <div class="row d-flex justify-content-center">
+                <div class="col-4">
+                    <p class="pt-2">
+                        <strong>Suscribite a nuestro newsletter</strong>
+                    </p>
+                </div>
+                <div class="col-md-5 col-3">
+                    <form class="form-outline mb-4">
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" class="d-block mb-4 ml-4 form-control">
+                        <input type="email" id="email" name="email" placeholder="Ingrese su email" class="mb-4 ml-4 form-control" require="required">
+                        <label for="tick" class="ml-4"><input type="checkbox" id="tick" name="tick">Recibir el Newsletter</label>
+                    </form>
+                </div>
+                <div class="col-3">
+                    <input type="submit" id="enviar" class="btn btn-danger ml-4">
+                    <div id="felicitaciones" class="col-12">
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
