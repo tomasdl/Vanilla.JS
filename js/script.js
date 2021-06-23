@@ -123,7 +123,10 @@ function mensajeEnviado() {
   if ($("#nombreUsuario").val() === "" || $("#emailUsuario").val() === "") {
     alert("Debes completar ambos campos");
     $("#enviarMensaje").removeAttr("data-dismiss");
-  } else if ($("#nombreUsuario").val() != "" && $("#emailUsuario").val() != "") {
+  } else if (
+    $("#nombreUsuario").val() != "" &&
+    $("#emailUsuario").val() != ""
+  ) {
     $("#notificacion").append(`
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -796,15 +799,13 @@ $("#btnAplicarTodos").on("click", aplicarTodos);
 //----------------------------------------------------------------------------------------
 //Ordenar
 
-
 function ordenarUbicacion() {
   $("#mainContent").empty();
   generarSalida(
     listaFiltrada6.sort((a, b) => a.ubicacion.localeCompare(b.ubicacion))
-    );
+  );
 }
 $("#porUbic").on("click", ordenarUbicacion);
-
 
 function ordenarPrecio() {
   $("#mainContent").empty();
